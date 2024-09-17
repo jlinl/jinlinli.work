@@ -1,0 +1,376 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+:root {
+    --bg-black: #0F0F0F;
+    --hr-color: #BFBFBF;
+    --lightest-font: #737373;
+    /*--eighty-pix: 4.5vh; 
+    --hundred-pix: 4.5vw;
+    --forty-pix: 2.5rem;*/
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+hr {
+	border: none;
+    height: 1px;
+    background-color: var(--hr-color);
+    color: var(--hr-color);
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+
+/* ----------------------- dark mode homepage ----------------------- */
+
+
+/* ----------------------- HEADER NAVIGATION BAR ----------------------- */
+ 
+  nav {
+    background-color: white;
+    width: 100vw; /* Ensure it covers the full viewport width */
+    height: 5rem;
+    padding: 0 2.5rem; /* Adds padding to the left and right */
+    position: fixed;
+    display: flex;
+    justify-content: space-between; /* Distributes items to the edges */
+    align-items: center; /* Centers items vertically in the nav */
+    z-index: 1;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+nav a {
+    font-family: "Times New Roman","EB Garamond", serif;
+    color: Black;
+    min-width: 48px;
+    min-height: 48px;
+}
+
+
+.logoFont {
+    font-family: "Times New Roman","EB Garamond", serif;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+.divider{
+    width:1px;
+    height:1.5rem;
+    background-color: var(--hr-color);
+    color: var(--hr-color);
+}
+
+.dark-mode {
+    background-color: var(--bg-black);
+    color:White;
+}
+
+.dark-mode a {
+    color: White;
+}
+
+/* ---------------------------- HOMEPAGE SECTION CONTAINERS ---------------------------- */
+
+
+.home-featured {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+
+.featured-project {
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.featured-project img {
+    width: 100%;
+    height: auto;
+}
+
+/* ---------------------------- PROJECT PAGE ---------------------------- */
+
+
+.project-page {
+    margin:5rem 2.5rem 0 2.5rem; /*top right bot left*/
+
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory; /* Snap scrolling in vertical direction */
+
+    flex-grow: 1; /* Makes the main section grow to take up the remaining space */
+
+
+}
+
+.one-page {
+    display: flex;
+
+    justify-content: space-between;
+    scroll-snap-align: start; /* Snap at the start of each section */
+    margin-bottom:5rem;
+}
+
+.textPin { /*left side of the page*/
+    position: relative;
+    width: 35.5%;
+}
+
+.stickyPage {
+    overflow: auto;
+    position: -webkit-sticky;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    height: 86vh; /*reduce this number if you want the sticky part to stay on the page longer..*/
+    top: 0; /*MOST IMPORTANT*/
+    padding-bottom: 2.5rem;
+
+}
+
+.imagePin {
+    gap: 2.5rem;
+    width: 61.3%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5rem;
+
+}
+  
+.imagePin img {
+    height: auto;
+    width: 100%;
+}
+  
+
+
+/* ---------------------------- TEXT STYLES ---------------------------- */
+
+
+ul {
+    display: flex; /* Makes ul a flex container */
+    list-style-type: none;
+    gap: 1rem;
+}
+
+a {
+    text-decoration: none;
+    font-size: 0.875rem; /*14px*/ 
+    font-weight: 100;
+
+    display: flex; /* Makes a a flex container */
+    align-items: center; /* Centers items vertically */
+    justify-content: center; /* Centers items horizontally */
+    
+}
+
+.active h4{
+    text-decoration: underline;
+    color: black;
+}
+
+
+
+
+
+
+p {
+    font-family: "EB Garamond", serif;
+    font-size: 1rem; /*16px*/
+    font-weight: 300;
+    line-height: 150%;
+    letter-spacing: 0;
+    color: black;
+}
+
+
+h2 {
+    font-family: "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: 0;
+}
+
+h3 {
+    font-size: 0.87rem; /*14px*/ 
+    font-family: "Helvetica", sans-serif;
+    font-weight: 300;
+    color: var(--lightest-font);
+}
+
+h4 {
+    font-size: 1rem; /*16px*/ 
+    font-family: "Helvetica", sans-serif;
+    font-weight: 200;
+    color: var(--lightest-font);
+}
+
+.table-row {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0;
+    gap: 2rem;
+}
+
+.table-row h3 {
+    min-width: 8.75rem;
+    line-height: 180%;
+    align-items: center;
+    height: 100%;
+}
+/*
+h1 {
+    font-family: 'Helvetica', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    letter-spacing: -0.1rem;
+  }
+
+h2 {
+    font-family: "Helvetica";
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: -0.1rem;
+  }
+
+h6 {
+    font-family: "Helvetica", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: -0.02rem;
+    line-height: 140%;
+    padding:1rem 0;
+    color: black;
+}
+  
+
+p, a,ul {
+    font-family: "Cormorant","EB Garamond", serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 150%;
+    letter-spacing: 0;
+    text-decoration: none;
+    color: black;
+  }
+
+  .about {
+    font-size: 1rem;
+  }
+
+  @font-face {
+    font-family: "Times Now";
+    src: url("fonts/TimesNow-LightItalic.ttf");
+  }
+*/
+  
+  #footer {
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #footer a {
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  @media only screen and (max-width: 1300px) {
+
+    h4 {
+        font-size: 0.87rem; /*14px*/  
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    
+.project-page {
+    overflow-y: auto;
+    scroll-snap-type: none; /* Snap scrolling in vertical direction */
+    
+}
+
+.one-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    scroll-snap-align: start; /* Snap at the start of each section */
+    margin-bottom:0;
+}
+
+.textPin { /*left side of the page*/
+    width: 100%;
+}
+
+.stickyPage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    
+    height: auto; /*reduce this number if you want the sticky part to stay on the page longer..*/
+    top: 0; /*MOST IMPORTANT*/
+    padding-bottom: 2.5rem;
+
+}
+
+.imagePin {
+    gap: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-featured {
+    flex-direction: column;
+    justify-content: normal;
+    gap: 5rem;
+}
+
+}
+
+@media only screen and (max-width: 580px) {
+#hide {
+    display:none;
+}
+
+#show {
+    display: flex;
+    flex-direction: row;
+    
+}
+#footer {
+    align-items: center;
+}
+.project-page {
+    margin:5rem 2rem 0 2rem; /*top right bot left*/
+}
+
+.divider {
+    display: none;
+}
+}
