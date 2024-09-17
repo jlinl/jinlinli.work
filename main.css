@@ -165,7 +165,9 @@ nav a {
     width: 100%;
 }
   
-
+#show {
+ display: none;
+}
 
 /* ---------------------------- TEXT STYLES ---------------------------- */
 
@@ -348,7 +350,7 @@ p, a,ul {
 .home-featured {
     flex-direction: column;
     justify-content: normal;
-    gap: 5rem;
+    gap: 4rem;
 }
 
 }
@@ -373,4 +375,14 @@ p, a,ul {
 .divider {
     display: none;
 }
+
+nav {
+    padding: 0 1rem; /* Adds padding to the left and right */
+}
+
+.project-page {
+    margin:5rem 1.5rem 0 1.5rem; /*top right bot left*/
+
+}
+
 }
