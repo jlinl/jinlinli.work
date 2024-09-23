@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-mode">
 <head>
     <meta charset="UTF-8">
     <title>Jin Lin Li — Portfolio</title>
@@ -13,78 +13,80 @@
     <script src="https://kit.fontawesome.com/5cbd7d84d5.js" crossorigin="anonymous"></script>
 
 <!-- top nav -->
-<nav class="dark-mode">
+<nav>
     <ul>
-        <li ><a href = "index.html" class="logoFont">J.</a></li>    
+        <li><a href = "index.html" id="logoFont">J.</a></li>    
     </ul>
-    
+
     <ul>
-        
         <li><a href = "https://drive.google.com/file/d/1yqM5fgOe1KM7QDxuzhHNFsUvotmm-bUM/view?usp=sharing">Resume</a></li>
         
-        <li id="hide" style="display: flex; align-items: center; justify-content: center;"><div id="hide" class="divider" style="background-color: #636363;"></div></li><!--HR-->
+        <li style="display:flex; align-items:center; justify-content:center;"><div class="divider"></div></li><!--HR-->
 
-        <li id="hide"><a><h3>Work</h3></a></li>
+        <li id="hide-on-mobile"><h4>Work</h4></li>
         <li><a href = "ibm.html">IBM</a></li>
         <li><a href = "vista.html">Vistaprint</a></li>
         
-        <li id="hide" style="display: flex; align-items: center; justify-content: center;"><div id="hide" class="divider" style="background-color: #636363;"></div></li><!--HR-->
+        <li style="display:flex; align-items:center; justify-content:center;" id="hide-on-mobile"><div class="divider" id="hide-on-mobile"></div></li><!--HR-->
         
-        <li id="hide"><a href = "https://www.linkedin.com/in/jinlinli/"><i class="fa-brands fa-linkedin-in fa"></i></a></li>
-        <li id="hide"><a href = "mailto: jin.lin.li@outlook.com"><i class="fa-regular fa-envelope"></i></a></li>
+        <li id="hide-on-mobile"><a href = "https://www.linkedin.com/in/jinlinli/"><i class="fa-brands fa-linkedin-in fa"></i></a></li>
+        <li id="hide-on-mobile"><a href = "mailto: jin.lin.li@outlook.com"><i class="fa-solid fa-envelope"></i></a></li>
     </ul>
 </nav>
 </head>
 
-<body style="background-color: #0F0F0F;">
-<section class="dark-mode" id="dark-mode" style="padding:5rem 2.5rem 0 2.5rem;"> <!--page-->
-<!-- intro section -->
-    <section style="padding: 8rem 0rem;">
-        <h2>Jin Lin is a product designer of 3 years who thrives on transforming<br>
+<body>
+<div class="page-content">
+    <!-- intro section -->
+    <div class="introduction">
+        <h2>Jin Lin is a product designer of 3 years who thrives on transforming
             intricate challenges into seamless, delightful experiences.<br>
             Passionate about growth; guided by a strategic mind and artistic eye. 
         </h2>
-    </section>
+    </div>
 
-<!-- featured section -->
-    <h4 style="padding-bottom: 2rem; color:white;">Featured work</h4>
+    <!-- featured section -->
+    <h3>Featured Work</h3>
 
-    <section class="home-featured" style="padding-bottom:5rem;">
+    <section class="featured-work">
         
-        <a><div class="featured-project">
-            <img src="img/Reach home preview.png" alt="Reach CRM desktop and mobile mockup" style="padding-bottom:3rem;">
-            <h3 style="padding-bottom:0.5rem;color:white;">Reach Client Management Software</h3>
-            <p style="width: 60%;padding-bottom:1rem; color:#9F9F9F;">Coming Soon.</p>
+        <a class="featured-project">
+            <img src="img/Reach home preview.png" alt="Reach CRM desktop and mobile mockup">
+            <div class="lockup">
+                <h3>Reach Client Management Software</h3>
+                <p>Coming Soon.</p>
+            </div>
+        </a>
 
-        </div></a>
+        <a href="ibm.html" class="featured-project">
+            <img src="img/ibmevents/ibm1.png" alt="IBM Research Portal events page">
+            <div class="lockup">
+                <h3>IBM Research Client Portal</h3>
+                <p>Designing a modern client experience facilitating access to the research, experts, and tools needed to drive innovation within their organizations.</p>
+            </div>
+            <p>UX, UI, Prototyping</p>
+       </a>
 
-        <a href="ibm.html"><div class="featured-project" >
-            <img src="img/ibmevents/ibm1.png" alt="IBM Research Portal events page" style="padding-bottom:3rem;">
-            <h3 style="padding-bottom:0.5rem; color: white;">IBM Research Client Portal</h3>
-            <p style="width: 80%;padding-bottom:1rem; color:#9F9F9F;">Designing a modern client experience facilitating access to the research, experts, and tools needed to drive innovation within their organizations.</p>
-            <p style="width: 60%;color:#9F9F9F;">UX, UI, Prototyping</p>
-        </div></a>
-
-        <a href="vista.html"><div class="featured-project">
-            <img src="img/vista.png" alt="Vistaprint desktop bundle creator" style="padding-bottom:3rem;">
-            <h3 style="padding-bottom:0.5rem; color: white;">Vistaprint Bundle Builder</h3>
-            <p style="width: 80%;padding-bottom:1rem; color:#9F9F9F;">Concepting tailored bundle solutions that meet small business needs at every step of their journey.</p>
-            <p style="width: 80%;color:#9F9F9F;">Concepting, Research, UX, UI, Prototyping</p>
-        </div></a>
+        <a href="vista.html" class="featured-project">
+            <img src="img/vista.png" alt="Vistaprint desktop bundle creator">
+            <div class="lockup">
+                <h3>Vistaprint Bundle Builder</h3>
+                <p>Concepting tailored bundle solutions that meet small business needs at every step of their journey.</p>
+            </div>
+            <p>Concepting, Research, UX, UI, Prototyping</p>
+       </a>
    
     </section>
-
-<hr>
-
+    <div><hr></div>
 
 <section id="footer">
-    <p style="color:#9F9F9F;">Coded by yours truly. 2024.</p> 
-    <ul id="show">
-    <li><a href = "https://www.linkedin.com/in/jinlinli/"><i class="fa-brands fa-linkedin-in fa"></i></a></li>
-    <li><a href = "mailto: jin.lin.li@outlook.com"><i class="fa-regular fa-envelope"></i></a></li>
-    </ul>  
+    <p>Coded by yours truly. 2024.</p>
+    <ul >
+        <li id="show-on-mobile"><a href = "https://www.linkedin.com/in/jinlinli/"><i class="fa-brands fa-linkedin-in fa"></i></a></li>
+        <li id="show-on-mobile"><a href = "mailto: jin.lin.li@outlook.com"><i class="fa-solid fa-envelope"></i></a></li>
+    </ul>
 </section>
 
-</section>
+</div>
 </body>
 </html>

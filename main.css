@@ -5,11 +5,8 @@
 
 :root {
     --bg-black: #0F0F0F;
-    --hr-color: #BFBFBF;
+    --hr-color: #c5c5c5;
     --lightest-font: #737373;
-    /*--eighty-pix: 4.5vh; 
-    --hundred-pix: 4.5vw;
-    --forty-pix: 2.5rem;*/
 }
 
 html, body {
@@ -29,7 +26,6 @@ hr {
 	border: none;
     height: 1px;
     background-color: var(--hr-color);
-    color: var(--hr-color);
 }
 
 ::-webkit-scrollbar {
@@ -38,16 +34,13 @@ hr {
 }
 
 
-/* ----------------------- dark mode homepage ----------------------- */
-
-
-/* ----------------------- HEADER NAVIGATION BAR ----------------------- */
+/* ---------------------------------------------- HEADER NAVIGATION BAR ---------------------------------------------- */
  
-  nav {
-    background-color: white;
+
+nav {
     width: 100vw; /* Ensure it covers the full viewport width */
     height: 5rem;
-    padding: 0 2.5rem; /* Adds padding to the left and right */
+    padding: 1rem 1.8rem; /* Adds padding to the left and right 2.5*/ 
     position: fixed;
     display: flex;
     justify-content: space-between; /* Distributes items to the edges */
@@ -59,97 +52,150 @@ hr {
 
 nav a {
     font-family: "Times New Roman","EB Garamond", serif;
+    font-size: 0.88rem; /*14px*/ 
+    font-weight: 100;
     color: Black;
-    min-width: 48px;
-    min-height: 48px;
+    padding:1rem 0.3rem;
 }
 
 
-.logoFont {
+#logoFont {
     font-family: "Times New Roman","EB Garamond", serif;
     font-size: 1.25rem;
     font-style: italic;
+    padding: 1rem;
 }
 
 .divider{
     width:1px;
-    height:1.5rem;
+    height:1.25rem;
     background-color: var(--hr-color);
-    color: var(--hr-color);
 }
+
+nav i {
+    padding: 0 .5rem;
+}
+
+/* ------------ dark mode nav ------------ */
 
 .dark-mode {
     background-color: var(--bg-black);
     color:White;
 }
 
-.dark-mode a {
+.dark-mode a, .featured-project h3 {
     color: White;
 }
 
-/* ---------------------------- HOMEPAGE SECTION CONTAINERS ---------------------------- */
+.dark-mode .divider, .dark-mode hr{
+    background-color: #636363;
+}
+
+.dark-mode  p, .dark-mode i, .dark-mode  h4 {
+    color: #9F9F9F;
+}
 
 
-.home-featured {
+
+/* ---------------------------------------------- HOMEPAGE SECTION CONTAINERS ---------------------------------------------- */
+
+
+.introduction {
+    padding: 8rem 0rem;
+    width: 65%;
+}
+
+.featured-work {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 2rem;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 3rem 0 5rem 0; /*top right bot left*/
+}
+
+.featured-project {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.25rem;
     align-items: flex-start;
 }
 
-
-.featured-project {
+.lockup {
+    display: flex;
     flex-direction: column;
-    width: 100%;
+    gap:0.75rem;
+    width: 90%;
 }
-
 
 .featured-project img {
     width: 100%;
     height: auto;
+    padding-bottom: 1.5rem;
 }
 
-/* ---------------------------- PROJECT PAGE ---------------------------- */
+#footer {
+    padding: 2.5rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 
-.project-page {
-    margin:5rem 2.5rem 0 2.5rem; /*top right bot left*/
-
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory; /* Snap scrolling in vertical direction */
-
-    flex-grow: 1; /* Makes the main section grow to take up the remaining space */
+/* ------------------------------------------------------ PROJECT PAGE ------------------------------------------------------ */
 
 
+/* ------------ structure ------------ */
+.page-content {
+    margin: 5rem 2.5rem 0 2.5rem; /*top right bot left*/
+    display: flex;
+    flex-direction: column; /* Ensure project-page expands */
+    flex-grow: 1; /* Take up remaining space */
+    overflow-y: auto; /* Enable scrolling */
+    scroll-snap-type: y mandatory; /* Enable snap scrolling */
 }
 
 .one-page {
     display: flex;
-
-    justify-content: space-between;
+    justify-content: space-between; /* Align sections */
     scroll-snap-align: start; /* Snap at the start of each section */
-    margin-bottom:5rem;
+    margin-bottom: 2.5rem;
 }
 
-.textPin { /*left side of the page*/
-    position: relative;
-    width: 35.5%;
+/* ----- left ----- */
+
+.textPin { /* Left side of the page */
+    flex-basis: 35.5%; /* Width of the text pin */
+    display: flex;
+    flex-direction: column;
 }
 
 .stickyPage {
-    overflow: auto;
-    position: -webkit-sticky;
     position: sticky;
+    top: 0; /* Adjust this to match the height of your header */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
-    height: 86vh; /*reduce this number if you want the sticky part to stay on the page longer..*/
-    top: 0; /*MOST IMPORTANT*/
-    padding-bottom: 2.5rem;
-
+    height: auto; /* Let the height adjust naturally */
+    min-height: calc(100vh - 5rem - 3rem); /* Sticky area adjusts to viewport minus header */
 }
+
+.table-row {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0;
+    gap: 2rem;
+}
+
+.table-row h4 {
+    min-width: 8.75rem;
+    line-height: 180%;
+    align-items: center;
+    height: 100%;
+}
+
+/* ----- right ----- */
 
 .imagePin {
     gap: 2.5rem;
@@ -157,47 +203,43 @@ nav a {
     display: flex;
     flex-direction: column;
     padding-bottom: 5rem;
-
 }
   
 .imagePin img {
     height: auto;
     width: 100%;
 }
-  
-#show {
- display: none;
+
+/* ----- text ----- */
+
+.active h3 {
+    text-decoration: underline;
+    color: black;
 }
 
-/* ---------------------------- TEXT STYLES ---------------------------- */
+#section-title {
+    width: 90%;
+    padding:3rem 0;
+}
+
+#body-width {
+    width:82%;
+}
+
+
+/* ------------------------------------------------ GENERAL TEXT STYLES ------------------------------------------------ */
 
 
 ul {
     display: flex; /* Makes ul a flex container */
     list-style-type: none;
     gap: 1rem;
+    align-items: center; /* Centers items vertically in the nav */
 }
 
 a {
     text-decoration: none;
-    font-size: 0.875rem; /*14px*/ 
-    font-weight: 100;
-
-    display: flex; /* Makes a a flex container */
-    align-items: center; /* Centers items vertically */
-    justify-content: center; /* Centers items horizontally */
-    
 }
-
-.active h4{
-    text-decoration: underline;
-    color: black;
-}
-
-
-
-
-
 
 p {
     font-family: "EB Garamond", serif;
@@ -208,181 +250,243 @@ p {
     color: black;
 }
 
-
 h2 {
-    font-family: "Times New Roman", serif;
+    font-family: "Times Now", "Times New Roman", serif;
     font-size: 2rem;
     font-weight: 200;
-    letter-spacing: 0;
+    letter-spacing: -0.01rem;
 }
 
 h3 {
-    font-size: 0.87rem; /*14px*/ 
+    font-size: 0.97rem; /*16px*/ 
     font-family: "Helvetica", sans-serif;
-    font-weight: 300;
+    font-weight: 200;
     color: var(--lightest-font);
 }
 
 h4 {
-    font-size: 1rem; /*16px*/ 
+    font-size: 0.84rem; /*14px*/ 
     font-family: "Helvetica", sans-serif;
-    font-weight: 200;
+    font-weight: 300;
     color: var(--lightest-font);
 }
 
-.table-row {
-    display: flex;
-    flex-direction: row;
-    padding: 1rem 0;
-    gap: 2rem;
-}
-
-.table-row h3 {
-    min-width: 8.75rem;
-    line-height: 180%;
-    align-items: center;
-    height: 100%;
-}
-/*
-h1 {
-    font-family: 'Helvetica', serif;
-    font-size: 5rem;
-    font-weight: 300;
-    letter-spacing: -0.1rem;
-  }
-
-h2 {
-    font-family: "Helvetica";
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: -0.1rem;
-  }
-
-h6 {
-    font-family: "Helvetica", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 300;
-    letter-spacing: -0.02rem;
-    line-height: 140%;
-    padding:1rem 0;
-    color: black;
-}
-  
-
-p, a,ul {
-    font-family: "Cormorant","EB Garamond", serif;
-    font-size: 1.2rem;
-    font-weight: 300;
-    line-height: 150%;
-    letter-spacing: 0;
-    text-decoration: none;
-    color: black;
-  }
-
-  .about {
-    font-size: 1rem;
-  }
-
-  @font-face {
+@font-face {
     font-family: "Times Now";
-    src: url("fonts/TimesNow-LightItalic.ttf");
-  }
-*/
-  
-  #footer {
-    padding: 3rem 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  #footer a {
-    min-width: 48px;
-    min-height: 48px;
-  }
-
-  @media only screen and (max-width: 1300px) {
-
-    h4 {
-        font-size: 0.87rem; /*14px*/  
-    }
-  }
-
-  @media only screen and (max-width: 800px) {
-    
-.project-page {
-    overflow-y: auto;
-    scroll-snap-type: none; /* Snap scrolling in vertical direction */
-    
+    src: url("fonts/TimesNow-SemiLight.tt;f");
 }
 
-.one-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: normal;
-    scroll-snap-align: start; /* Snap at the start of each section */
-    margin-bottom:0;
-}
 
-.textPin { /*left side of the page*/
-    width: 100%;
-}
+/* ------------------------------------------------ BREAKPOINTS ------------------------------------------------ */
 
-.stickyPage {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: normal;
-    
-    height: auto; /*reduce this number if you want the sticky part to stay on the page longer..*/
-    top: 0; /*MOST IMPORTANT*/
-    padding-bottom: 2.5rem;
 
-}
-
-.imagePin {
-    gap: 1rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.home-featured {
-    flex-direction: column;
-    justify-content: normal;
-    gap: 4rem;
-}
-
-}
-
-@media only screen and (max-width: 580px) {
-#hide {
-    display:none;
-}
-
-#show {
-    display: flex;
-    flex-direction: row;
-    
-}
-#footer {
-    align-items: center;
-}
-.project-page {
-    margin:5rem 2rem 0 2rem; /*top right bot left*/
-}
-
-.divider {
+/* ----- regular stuff ----- */
+#show-on-mobile {
     display: none;
 }
 
-nav {
-    padding: 0 1rem; /* Adds padding to the left and right */
+/* --------------- desktop media queries --------------- */
+
+@media only screen and (min-width: 1550px) {
+    /* homepage */
+    .introduction {
+        width: 60%;
+    }
 }
 
-.project-page {
-    margin:5rem 1.5rem 0 1.5rem; /*top right bot left*/
+@media only screen and (max-width: 1396px) {
+    /* homepage */
+    .introduction {
+        width: 72%;
+    }
+}
+
+@media only screen and (max-width: 1268px) {
+    /* homepage */
+    .introduction {
+        width: 80%;
+    }
+
+    /* project page */
+
+    #show-on-mobile {
+    display: inline;
+    }
+
+    #show-on-mobile i {
+        display: none;
+    }
+
+    .hide-on-small {
+        display: none;
+    }
+
+    #section-title {
+        width: 100%;
+    }
+    
+    #body-width {
+        width:100%;
+    }
+
+    .table-row h4 {
+        min-width: 7.5rem;
+        line-height: 180%;
+    }
+
+    .table-row {
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    /* homepage */
+    .introduction {
+        width: 100%;
+    }
+}
+
+/* --------------- tablet media queries --------------- */
+
+@media only screen and (max-width: 1025px) { /* ipad pro */
+    /* project page */
+    .one-page {
+        flex-direction: column;
+        justify-content: flex-start; 
+        position: relative;
+        z-index: 2;
+        min-height: calc(100vh - 5rem);
+        margin-bottom: 0;
+    }
+
+    .textPin { 
+        top: 0;
+        flex-direction: column;
+        justify-content:flex-start;
+        height:fit-content;
+    }
+
+    .stickyPage {
+        position: sticky;
+        top: 0; 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: auto; 
+        min-height: auto;
+        padding-bottom: 4rem;
+    }
+ 
+    #section-title {
+        width: 70%;
+        padding:4rem 0 2.5rem 0;
+    }
+
+    #body-width {
+        width:65%;
+    }
+
+    .imagePin {
+        position: relative;
+        overflow-y: auto;
+        width: 100%;
+        gap: 1rem;
+        padding-bottom: 2.5rem;
+        height: fit-content;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    /* homepage */
+    .featured-work {
+        flex-direction: column;
+        gap: 5rem;
+        padding: 3rem 0 5rem 0; /*top right bot left*/
+    }
+    
+    .featured-project {
+        gap: 1.25rem;
+    }
+    
+    .featured-project img {
+        padding-bottom: 1.25rem;
+    }
+
+    #show-on-mobile i {
+        display: inline;
+        padding: 0 1rem;
+    }
 
 }
 
+/* --------------- mobile media queries --------------- */
+
+@media only screen and (max-width: 580px) { /* mobile*/
+    /* nav */
+
+    nav {
+        padding: 0 0.75rem; /* Adds padding to the left and right 2.5*/ 
+    }
+
+    nav a {
+        font-size: 0.88rem; /*14px*/ 
+        font-weight: 100;
+        padding:1rem 0;
+    }
+
+    #logoFont {
+        font-size: 1rem;
+        padding: 1rem 0.5rem;
+    }
+
+    #hide-on-mobile {
+        display: none;
+    }
+
+    #show-on-mobile a {
+        display: inline;
+        padding:1rem;
+    }
+
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1rem; /*16px*/ 
+    }
+
+    h4 {
+        font-size: 1rem; /*16px*/ 
+
+    }
+
+
+
+    /* homepage  */
+    #show-on-mobile i {
+        display: inline;
+        padding: 0;
+    }
+
+    .page-content {
+        margin:5rem 1rem 0 1rem; /*top right bot left*/
+    }
+
+    /* project page */
+    #section-title {
+        width: 90%;
+        padding:2rem 0 2.5rem 0;
+    }
+
+    #body-width {
+        width:90%;
+    }
+
+    .stickyPage {
+        position: sticky;
+        padding-bottom: 2.5rem;
+    }
 }
