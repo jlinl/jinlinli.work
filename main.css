@@ -308,7 +308,6 @@ h4 {
     }
 
     /* project page */
-
     #show-on-mobile {
     display: inline;
     }
@@ -343,13 +342,18 @@ h4 {
 @media only screen and (max-width: 1150px) {
     /* homepage */
     .introduction {
-        width: 100%;
+        width: 90%;
     }
 }
 
 /* --------------- tablet media queries --------------- */
 
 @media only screen and (max-width: 1025px) { /* ipad pro */
+    /* homepage */
+    .featured-project {
+        gap: 0.5rem;
+    }
+    
     /* project page */
     .one-page {
         flex-direction: column;
@@ -380,11 +384,15 @@ h4 {
  
     #section-title {
         width: 70%;
-        padding:4rem 0 2.5rem 0;
+        padding:3.5rem 0 2.5rem 0;
     }
 
     #body-width {
         width:65%;
+    }
+
+    h3 {
+        font-size: 0.9rem;
     }
 
     .imagePin {
@@ -426,17 +434,18 @@ h4 {
     /* nav */
 
     nav {
-        padding: 0 0.75rem; /* Adds padding to the left and right 2.5*/ 
+        height: 4rem;
+        padding: 0 0rem 0 0.75rem; /*top right bot left*/
     }
 
     nav a {
-        font-size: 0.88rem; /*14px*/ 
+        font-size: 0.9rem;
         font-weight: 100;
         padding:1rem 0;
     }
 
     #logoFont {
-        font-size: 1rem;
+        font-size: 1.1rem;
         padding: 1rem 0.5rem;
     }
 
@@ -449,9 +458,14 @@ h4 {
         padding:1rem;
     }
 
-    
+    .introduction h2 {
+        font-size: 2.1rem;
+        line-height: 2.4rem;
+        letter-spacing: -0.03rem;
+    }
+
     h2 {
-        font-size: 1.75rem;
+        font-size: 1.6rem;
     }
 
     h3 {
@@ -459,34 +473,54 @@ h4 {
     }
 
     h4 {
-        font-size: 1rem; /*16px*/ 
-
+        font-size: 0.9rem; /*16px*/ 
     }
 
+    /* homepage */
 
+    .page-content {
+        margin:4rem 1rem 0 1rem; /*top right bot left*/
+        scroll-snap-type:none;
+    }
 
-    /* homepage  */
+    .featured-project {
+        gap: 1rem;
+    }
+
+    #footer {
+        padding: 1.75rem 0;
+    }
+
     #show-on-mobile i {
         display: inline;
         padding: 0;
     }
-
-    .page-content {
-        margin:5rem 1rem 0 1rem; /*top right bot left*/
+    
+    #footer ul {
+        gap: 0rem;
     }
 
     /* project page */
+
+    .one-page {
+        min-height: auto;
+    }
+
+    .stickyPage {
+        position: relative;
+        padding-bottom: 3rem;
+    }
+
+    .textPin ul {
+        display: none;
+    }
+
     #section-title {
         width: 90%;
-        padding:2rem 0 2.5rem 0;
+        padding:4rem 0 2.5rem 0;
     }
 
     #body-width {
         width:90%;
-    }
-
-    .stickyPage {
-        position: sticky;
-        padding-bottom: 2.5rem;
     }
 }
